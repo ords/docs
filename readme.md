@@ -15,3 +15,6 @@ Resources dedicated to a specific app is prefixed with the service or app name. 
 `product-cool-app.environment.project-name`
 `team-services.environment.project-name`
 
+Sometimes a service name matches that the cloud name is included as a prefix:
+
+`bucket.team-services.environment.project-name`
