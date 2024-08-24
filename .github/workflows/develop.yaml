@@ -1,21 +1,21 @@
-name: 'Build / Test / Deploy'
+name: Build / Test / Deploy
 on:
   push:
     branches:
-      - '"main"'
+      - main
 env:
-  PROJECT_ID: 'my-project' # TODO: update to your Google Cloud project ID
-  REGION: 'us-central1' # TODO: update to your region
-  SERVICE: 'my-service' # TODO: update to your service name
+  PROJECT_ID: my-project # TODO: update to your Google Cloud project ID
+  REGION: us-central1 # TODO: update to your region
+  SERVICE: my-service # TODO: update to your service name
 
 jobs:
   Build:
-    runs-on: 'ubuntu-latest'
+    runs-on: ubuntu-latest
     steps:
-    - name: 'Checkout'
-      uses: 'actions/checkout@v4'
-    - name: Lint & Build
-      uses: actions/setup-node@v4.0.3
-      working-directory: ./app
-      run: npm ci && npm run lint && npm run build
-          
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4.0.3
+      - name: Lint & Build
+        working-directory: ./app
+        run: npm ci && npm run lint && npm run build
